@@ -1,0 +1,9 @@
+.header{display: flex;justify-content: space-between;padding: 15px;align-items: center;}
+.header ul {
+    display: flex;
+    list-style: none;
+}
+.header ul li a{
+    padding: 15px 10px;
+    display: block;
+}
