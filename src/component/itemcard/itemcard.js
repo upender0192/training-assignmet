@@ -3,8 +3,8 @@ import ItemcardInfo from './itemCardInfo/itemcardinfo'
 
 
 class ItemCard extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.state={
              data : []
@@ -22,12 +22,16 @@ class ItemCard extends React.Component{
         )
     }
 
+    applyJob(id) {
+        alert(id)
+    }
+
     render(){
         return(
             <Fragment>
                 {
-                    this.state.data.map(({id,title}) => 
-                        <ItemcardInfo key={id} title={title}></ItemcardInfo>
+                    this.state.data.map((data) => 
+                        <ItemcardInfo key={data.id} data={data} applyJob={ () => this.applyJob(data.id)}></ItemcardInfo>
                     )
                 }
             </Fragment>
